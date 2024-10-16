@@ -1,6 +1,6 @@
-DDT Motor M06/M15 Library
+# DDT Motor M06/M15 Library
 
-Arduino Mega用に改変したものです
+オリジナルがM5用だったものを、Arduino Mega用に改変したものです
 
 ## オリジナルのライブラリ
 
