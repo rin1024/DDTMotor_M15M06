@@ -1,5 +1,7 @@
 #pragma once
 
+#include<ArduinoSTL.h>
+
 #include <iostream>
 #include <array>
 #include <string>
@@ -7,13 +9,12 @@
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include <termios.h>
 #include <time.h>
 #include <unistd.h>
 #include <limits>
 
 // Serial2を使うため
-#include <HardwareSerial.h>
+//#include <HardwareSerial.h>
 
 typedef struct Received
 {
@@ -52,7 +53,7 @@ private:
 		116, 42, 200, 150, 21, 75, 169, 247, 182, 232, 10, 84, 215, 137, 107, 53};
 
 public:
-	MotorHandler(int serial_port_RX, int serial_port_TX);
+	MotorHandler();
 	void Control_Motor(uint16_t Speed, uint8_t ID, uint8_t Acce, uint8_t Brake_P, Receiver *Receiver);
 	void Get_Motor(uint8_t ID, Receiver *Receiver);
 	void Set_MotorMode(uint8_t Mode, uint8_t ID);

@@ -1,9 +1,10 @@
 #include "DDT_Motor_M15M06.h"
 
-MotorHandler::MotorHandler(int RX, int TX)
+MotorHandler::MotorHandler()
 {
 	// Baud rate：115200 Data bit：8bit Stop bit：1bit Parity check：none
-	Serial2.begin(115200, SERIAL_8N1, RX, TX);
+	//Serial1.begin(115200, SERIAL_8N1, RX, TX);
+  Serial1.begin(115200);
 }
 
 void MotorHandler::Control_Motor(uint16_t Speed, uint8_t ID, uint8_t Acce, uint8_t Brake_P, Receiver *Receiver)
@@ -109,14 +110,14 @@ void MotorHandler::Check_Motor(Receiver *Receiver)
 
 void MotorHandler::Send_Motor()
 {
-	Serial2.write(Tx.data(), 10);
+	Serial1.write(Tx.data(), 10);
 }
 
 void MotorHandler::Receive_Motor()
 {
-	if (Serial2.available())
+	if (Serial1.available())
 	{
-		Serial2.readBytes(Rx.data(), 10);
+		Serial1.readBytes(Rx.data(), 10);
 	}
 }
 
