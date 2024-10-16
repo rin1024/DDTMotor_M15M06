@@ -1,4 +1,4 @@
-# M5Stack DDT Motor M06/M15 Library
+DDT Motor M06/M15 Library
 
 Arduino Mega用に改変したものです
 
